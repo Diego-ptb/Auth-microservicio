@@ -1,0 +1,12 @@
+target/
+.idea/
+.vscode/
+*.iml
+
+.env
+
+application-prod.properties
+
+docker-compose.override.yml
+
+*.log
