@@ -42,6 +42,31 @@ Microservicio de autenticación para el sistema "Sanos y Salvos" construido con 
 mvn spring-boot:run
 ```
 
+## Pruebas
+
+Ejecutar todas las pruebas unitarias:
+
+```bash
+mvn test
+```
+
+Ejecutar una clase de prueba especifica:
+
+```bash
+mvn -Dtest=AuthServiceTest test
+```
+
+### Cobertura de pruebas unitarias
+
+- AuthControllerTest: valida respuestas y transformaciones basicas del controlador (register, login, refresh, validate y /me).
+- AuthServiceTest: cubre registro, login, refresh de token y validacion de token, incluyendo escenarios de error.
+- JwtServiceTest: verifica generacion y validacion de JWT, incluyendo expiracion.
+- CustomUserDetailsServiceTest: valida carga de usuario por username/id y asignacion de rol por defecto.
+- JwtAuthenticationFilterTest: valida el flujo del filtro con y sin token valido.
+- CustomUserDetailsTest: valida el mapeo de datos de usuario a UserDetails.
+- GlobalExceptionHandlerTest: valida los codigos de estado y mensajes de error.
+- SecurityConfigTest: valida el PasswordEncoder y el AuthenticationManager.
+
 ## Docker
 
 ```bash

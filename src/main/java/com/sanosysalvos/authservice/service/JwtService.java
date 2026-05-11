@@ -72,8 +72,12 @@ public class JwtService {
     }
 
     public boolean isTokenValid(String token, String userId) {
-        final String tokenSubject = extractSubject(token);
-        return (userId.equals(tokenSubject)) && !isTokenExpired(token);
+        try {
+            final String tokenSubject = extractSubject(token);
+            return (userId.equals(tokenSubject)) && !isTokenExpired(token);
+        } catch (JwtException | IllegalArgumentException ex) {
+            return false;
+        }
     }
 
     private boolean isTokenExpired(String token) {
