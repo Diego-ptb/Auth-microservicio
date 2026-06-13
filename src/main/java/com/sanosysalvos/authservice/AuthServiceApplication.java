@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @SpringBootApplication
+@EnableAsync
 public class AuthServiceApplication {
 
     public static void main(String[] args) {
@@ -52,6 +54,7 @@ public class AuthServiceApplication {
                 adminUser.setUsername("admin");
                 adminUser.setEmail("admin@example.com");
                 adminUser.setPassword(passwordEncoder.encode("admin123"));
+                adminUser.setRut("11.111.111-1");
                 adminUser.setRole(adminRole);
                 adminUser.setCreatedAt(LocalDateTime.now());
                 userRepository.save(adminUser);

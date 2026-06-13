@@ -25,6 +25,9 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @Column(unique = true, nullable = false, length = 12)
+    private String rut;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -79,6 +82,14 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
     public LocalDateTime getCreatedAt() {

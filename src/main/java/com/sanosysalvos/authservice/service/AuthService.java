@@ -50,6 +50,9 @@ public class AuthService {
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email is already in use");
         }
+        if (userRepository.existsByRut(request.getRut())) {
+            throw new RuntimeException("RUT already registered");
+        }
 
         Role role = roleRepository.findByName("USER")
                 .orElseThrow(() -> new RuntimeException("Role USER not found"));
@@ -58,6 +61,7 @@ public class AuthService {
         user.setUsername(request.getUsername());
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRut(request.getRut());
         user.setRole(role);
         user.setCreatedAt(LocalDateTime.now());
 
