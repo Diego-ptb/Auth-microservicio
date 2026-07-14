@@ -37,6 +37,9 @@ CREATE TABLE IF NOT EXISTS vet_requests (
     created_at TIMESTAMP NOT NULL
 );
 
+ALTER TABLE vet_requests ADD COLUMN IF NOT EXISTS latitude DOUBLE PRECISION;
+ALTER TABLE vet_requests ADD COLUMN IF NOT EXISTS longitude DOUBLE PRECISION;
+
 CREATE INDEX IF NOT EXISTS idx_vet_requests_user_id ON vet_requests(user_id);
 CREATE INDEX IF NOT EXISTS idx_vet_requests_status ON vet_requests(status);
 

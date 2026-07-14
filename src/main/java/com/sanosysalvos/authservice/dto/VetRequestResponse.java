@@ -13,6 +13,8 @@ public class VetRequestResponse {
     private String address;
     private String phone;
     private String rutClinica;
+    private Double latitude;
+    private Double longitude;
     private VetRequestStatus status;
     private String notes;
     private LocalDateTime createdAt;
@@ -29,6 +31,10 @@ public class VetRequestResponse {
     public void setPhone(String phone) { this.phone = phone; }
     public String getRutClinica() { return rutClinica; }
     public void setRutClinica(String rutClinica) { this.rutClinica = rutClinica; }
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
     public VetRequestStatus getStatus() { return status; }
     public void setStatus(VetRequestStatus status) { this.status = status; }
     public String getNotes() { return notes; }

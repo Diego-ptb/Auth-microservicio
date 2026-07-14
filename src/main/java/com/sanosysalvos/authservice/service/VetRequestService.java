@@ -50,6 +50,8 @@ public class VetRequestService {
             request.setAddress(dto.getAddress());
             request.setPhone(dto.getPhone());
             request.setRutClinica(dto.getRutClinica());
+            request.setLatitude(dto.getLatitude());
+            request.setLongitude(dto.getLongitude());
             if (request.getStatus() == VetRequestStatus.REJECTED) {
                 request.setStatus(VetRequestStatus.PENDING);
                 request.setNotes(null);
@@ -62,6 +64,8 @@ public class VetRequestService {
             request.setAddress(dto.getAddress());
             request.setPhone(dto.getPhone());
             request.setRutClinica(dto.getRutClinica());
+            request.setLatitude(dto.getLatitude());
+            request.setLongitude(dto.getLongitude());
         }
 
         vetRequestRepository.save(request);
@@ -123,6 +127,8 @@ public class VetRequestService {
         resp.setAddress(r.getAddress());
         resp.setPhone(r.getPhone());
         resp.setRutClinica(r.getRutClinica());
+        resp.setLatitude(r.getLatitude());
+        resp.setLongitude(r.getLongitude());
         resp.setStatus(r.getStatus());
         resp.setNotes(r.getNotes());
         resp.setCreatedAt(r.getCreatedAt());

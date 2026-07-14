@@ -18,6 +18,10 @@ public class VetRequestDto {
     @Size(max = 12)
     private String rutClinica;
 
+    private Double latitude;
+
+    private Double longitude;
+
     public String getClinicName() { return clinicName; }
     public void setClinicName(String clinicName) { this.clinicName = clinicName; }
     public String getAddress() { return address; }
@@ -26,4 +30,8 @@ public class VetRequestDto {
     public void setPhone(String phone) { this.phone = phone; }
     public String getRutClinica() { return rutClinica; }
     public void setRutClinica(String rutClinica) { this.rutClinica = rutClinica; }
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 }
